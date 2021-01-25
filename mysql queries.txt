@@ -1,0 +1,38 @@
+use stockdb;
+SET SQL_SAFE_UPDATES = 0;
+select * from portfolio_stocks;
+select * from batch_job_seq;
+select COUNT(*) from portfolio_stocks;
+delete from portfolio_stocks;    
+delete from BATCH_STEP_EXECUTION; 
+
+
+
+drop table  portfolio_stocks;   
+desc portfolio_stocks;
+SELECT * FROM BATCH_STEP_EXECUTION ORDER BY START_TIME DESC;
+/* CREATE TABLE portfolio_stocks_new
+  AS (SELECT *
+      FROM portfolio_stocks WHERE 1=2); */
+                                        
+CREATE TABLE `portfolio_stocks` (
+   'stock_id' int NOT NULL AUTO_INCREMENT,	
+   `stock_symbol` varchar(255) NOT NULL,
+   `date_loaded`  datetime NOT NULL, 
+   `company_name` varchar(255) DEFAULT NULL,
+   `industry` varchar(255) DEFAULT NULL,
+   `isin_code` varchar(255) DEFAULT NULL,
+   `qty` int DEFAULT NULL,
+   `average_cost_price` decimal(18,2) DEFAULT NULL,
+   `current_market_price` decimal(18,2) DEFAULT NULL,
+   `perc_change_over_prev_close` decimal(3,2) DEFAULT NULL,
+   `value_at_cost` decimal(18,2) DEFAULT NULL,
+   `value_at_market_price` decimal(18,2) DEFAULT NULL,
+   `days_gain` decimal(18,2) DEFAULT NULL,
+   `days_gain_perc` decimal(18,2) DEFAULT NULL,
+   `realized_profit_loss` decimal(18,2) DEFAULT NULL,
+   `unrealized_profile_loss` decimal(18,2) DEFAULT NULL,
+   `unrealized_profit_loss_perc` decimal(18,2) DEFAULT NULL,
+   PRIMARY KEY (date_loaded,stock_symbol)
+ )   ; 
+   

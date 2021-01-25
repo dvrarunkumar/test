@@ -1,0 +1,8 @@
+com\akd\main\AKDSpringBootStarter.class
+com\akd\main\controller\StockFieldMapper.class
+com\akd\main\model\Stock.class
+com\akd\main\model\Status.class
+com\akd\main\repository\StockRepository.class
+com\akd\main\ApiError.class
+com\akd\main\controller\BasicController.class
+com\akd\main\ApiSubError.class
